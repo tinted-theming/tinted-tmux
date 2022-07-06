@@ -7,7 +7,7 @@ elif [ -n "$ZSH_VERSION" ]; then
 fi
 current_dir=${script_path%/*}
 theme_option="@colors-base16"
-default_theme="default-dark"
+default_theme=${BASE16_THEME_DEFAULT:-"default-dark"}
 
 get_tmux_option() {
 	local option="$1"
