@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 theme_option="@colors-base16"
 default_theme="default-dark"
 
@@ -18,6 +17,10 @@ get_tmux_option() {
 
 main() {
 	local theme="$(get_tmux_option "$theme_option" "$default_theme")"
-	tmux source-file "$CURRENT_DIR/colors/base16-${theme}.conf"
+	tmux source-file "$current_dir/colors/base16-${theme}.conf"
 }
 main
+
+unset current_dir
+unset theme_option
+unset default_theme
