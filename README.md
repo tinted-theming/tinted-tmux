@@ -1,26 +1,62 @@
-# base16 color theme for tmux
+# Base16 Tmux
 
-A tmux base16 theme based on the work of [tmux-colors-solarized](https://github.com/seebi/tmux-colors-solarized) and [base16](https://github.com/chriskempson/base16).
+See [Base16 repository][1] for more information.
 
-## Installation
-These config snippets for the terminal multiplexer tmux should be added to your `~/.tmux.conf` configuration file.
-This means you have to append the content of e.g. `colors/base16-default-dark.conf` to the end of your own config e.g. by using this oneliner (backup you config first!!):
+Base16 tmux provides all the base16 theme variants for tmux. Easily swap
+between over 200 themes.
 
-    cat colors/base16-default-dark.conf >> ~/.tmux.conf
+## Installation (Manual)
 
-In most cases, you have to force tmux to assume the terminal supports 256 colours.
-For this, start tmux as `tmux -2`.
+Once you've cloned this repo locally somewhere, you can source the theme
+you want to use from within your `.tmux.conf` file. Add the following
+line to your `.tmux.conf`.
 
-This color scheme is tested with tmux >= 1.5. tmux 1.1 is reported as not working.
+```tmux
+source-file $HOME/.tmux/plugins/base16-tmux/colors/base16-default-dark.conf
+```
 
-### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+In most cases, you have to force tmux to assume the terminal supports
+256 colours. For this, start tmux as `tmux -2`.
+
+This color scheme is tested with tmux `>= 1.5`. tmux `1.1` is reported as
+not working.
+
+### Installation with [Tmux Plugin Manager][2]
 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
-    set -g @plugin 'mattdavis90/base16-tmux'
+```tmux
+set -g @plugin 'base16-project/base16-tmux'
+```
 
-Hit `prefix + I` to fetch the plugin and source it. The plugin should now be working.
+Make sure to source your newly updated `.tmux.conf`. Hit `prefix + I` to
+fetch the plugin and source it. The plugin should now be working.
 
-All the base16 themes are provided so you can pick and choose via `.tmux.conf` option:
+All the base16 themes are provided so you can pick and choose via
+`.tmux.conf` option:
 
 - `set -g @colors-base16 'default-dark'` (the default)
+
+## Usage with [Base16-Shell][3]
+
+Your base16-tmux theme can be automatically switched alongside your
+[base16-vim][4] and [base16-fzf][6] theme if you use [base16-shell][3].
+
+Follow the TPM (Tmux Plugin Manager) installation instructions above and
+your tmux theme will automatically switch when you change
+[base16-shell][3] themes.
+
+## Contributing
+
+See [`CONTRIBUTING.md`][7], which contains building and contributing
+instructions.
+
+Based on the work of [tmux-colors-solarized][5].
+
+[1]: https://github.com/base16-project/base16
+[2]: https://github.com/tmux-plugins/tpm
+[3]: https://github.com/base16-project/base16-shell
+[4]: https://github.com/base16-project/base16-vim
+[5]: https://github.com/seebi/tmux-colors-solarized
+[6]: https://github.com/base16-project/base16-fzf
+[7]: CONTRIBUTING.md
