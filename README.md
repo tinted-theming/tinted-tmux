@@ -7,13 +7,12 @@ between over 200 themes.
 
 ## Installation (Manual)
 
-These config snippets for the terminal multiplexer tmux should be added
-to your `~/.tmux.conf` configuration file. This means you have to append
-the content of e.g. `colors/base16-default-dark.conf` to the end of your
-own config e.g. by using this oneliner (backup you config first!!):
+Once you've cloned this repo locally somewhere, you can source the theme
+you want to use from within your `.tmux.conf` file. Add the following
+line to your `.tmux.conf`.
 
-```shell
-cat colors/base16-default-dark.conf >> ~/.tmux.conf
+```tmux
+source-file $HOME/.tmux/plugins/base16-tmux/colors/base16-default-dark.conf
 ```
 
 In most cases, you have to force tmux to assume the terminal supports
