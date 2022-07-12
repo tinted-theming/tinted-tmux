@@ -53,7 +53,7 @@ instructions.
 
 Based on the work of [tmux-colors-solarized][5].
 
-[1]: https://github.com/base16-project/base16
+[1]: https://github.com/base16-project/home
 [2]: https://github.com/tmux-plugins/tpm
 [3]: https://github.com/base16-project/base16-shell
 [4]: https://github.com/base16-project/base16-vim
