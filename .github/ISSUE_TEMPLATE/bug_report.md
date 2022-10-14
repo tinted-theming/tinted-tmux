@@ -4,7 +4,7 @@ about: Create a report to help us improve
 title: "[Bug report] "
 labels: ["bug"]
 assignees: 
-  - base16-project/tmux
+  - tinted-theming/tmux
 ---
 
 ## Describe the bug

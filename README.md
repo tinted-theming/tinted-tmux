@@ -26,7 +26,7 @@ not working.
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
 ```tmux
-set -g @plugin 'base16-project/base16-tmux'
+set -g @plugin 'tinted-theming/base16-tmux'
 ```
 
 Make sure to source your newly updated `.tmux.conf`. Hit `prefix + I` to
@@ -53,10 +53,10 @@ instructions.
 
 Based on the work of [tmux-colors-solarized][5].
 
-[1]: https://github.com/base16-project/home
+[1]: https://github.com/tinted-theming/home
 [2]: https://github.com/tmux-plugins/tpm
-[3]: https://github.com/base16-project/base16-shell
-[4]: https://github.com/base16-project/base16-vim
+[3]: https://github.com/tinted-theming/base16-shell
+[4]: https://github.com/tinted-theming/base16-vim
 [5]: https://github.com/seebi/tmux-colors-solarized
-[6]: https://github.com/base16-project/base16-fzf
+[6]: https://github.com/tinted-theming/base16-fzf
 [7]: CONTRIBUTING.md
