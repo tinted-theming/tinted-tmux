@@ -1,3 +1,7 @@
 default:
     extension: .conf
     output: colors
+
+config:
+    extension: .conf
+    output: colors
