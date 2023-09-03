@@ -37,7 +37,9 @@ All the base16 themes are provided so you can pick and choose via
 
 - `set -g @colors-base16 'default-dark'` (the default)
 
-## Usage with [Base16-Shell][3]
+## Usage 
+
+### [Base16-Shell][3]
 
 Your base16-tmux theme can be automatically switched alongside your
 [base16-vim][4] and [base16-fzf][6] theme if you use [base16-shell][3].
@@ -45,6 +47,19 @@ Your base16-tmux theme can be automatically switched alongside your
 Follow the TPM (Tmux Plugin Manager) installation instructions above and
 your tmux theme will automatically switch when you change
 [base16-shell][3] themes.
+
+### `$BASE16_THEME_DEFAULT`
+
+[base16-shell][3] supports the environment variable
+`$BASE16_THEME_DEFAULT`. For consistency, base16-tmux also works with
+this variable. If you have `$BASE16_THEME_DEFAULT` set globally before
+you launch tmux, and you don't have a base16-tmux theme set, it will
+default to the theme you've set in that variable. Add it to your
+shell `.*rc` file, for example:
+
+```shell
+export $BASE16_THEME_DEFAULT="solarized-light"
+```
 
 ## Contributing
 
