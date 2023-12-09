@@ -37,4 +37,10 @@ set-window-option -g window-status-activity-style "fg=#{{base05-hex}},bg=#{{base
 # style for command messages
 set-option -g message-command-style "fg=#{{base06-hex}},bg=#{{base02-hex}}"
 
+# Optional active/inactive pane state
+if-shell '[ "$BASE16_TMUX_OPTION_ACTIVE" = "1" ]' {
+  set-window-option -g window-active-style "fg=#{{base05-hex}},bg=#{{base00-hex}}"
+  set-window-option -g window-style "fg=#{{base05-hex}},bg=#{{base01-hex}}"
+}
+
 # vim: set ft=tmux tw=0:

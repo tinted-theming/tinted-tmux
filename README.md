@@ -61,6 +61,20 @@ shell `.*rc` file, for example:
 export $BASE16_THEME_DEFAULT="solarized-light"
 ```
 
+## Configuration
+
+You can optionally enable some styling options. You can do this by
+adding the relevant environment variable to your shell `.*rc` file.
+
+### Active/inactive pane state
+
+```shell
+export BASE16_TMUX_OPTION_ACTIVE=1
+```
+
+This adds support which changes background color for the focussed pane
+vs blurred panes.
+
 ## Contributing
 
 See [`CONTRIBUTING.md`][7], which contains building and contributing
