@@ -75,6 +75,16 @@ export BASE16_TMUX_OPTION_ACTIVE=1
 This adds support which changes background color for the focussed pane
 vs blurred panes.
 
+### Statusbar
+
+```shell
+export BASE16_TMUX_OPTION_STATUSBAR=1
+```
+
+This adds a basic statusbar. This is optional because users may already
+have a statusbar they prefer. This statusbar was inspired by
+[tmux-gruvbox].
+
 ## Contributing
 
 See [`CONTRIBUTING.md`][7], which contains building and contributing
@@ -89,3 +99,4 @@ Based on the work of [tmux-colors-solarized][5].
 [5]: https://github.com/seebi/tmux-colors-solarized
 [6]: https://github.com/tinted-theming/base16-fzf
 [7]: CONTRIBUTING.md
+[tmux-gruvbox]: https://github.com/egel/tmux-gruvbox
