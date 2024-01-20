@@ -78,7 +78,7 @@ vs blurred panes.
 ### Statusbar
 
 ```shell
-export BASE16_TMUX_OPTION_STATUSBAR=1
+export BASE16_TMUX_OPTION_STATUS=1
 ```
 
 This adds a basic statusbar. This is optional because users may already
