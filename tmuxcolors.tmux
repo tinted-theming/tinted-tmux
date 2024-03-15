@@ -1,32 +1,39 @@
 #!/usr/bin/env bash
 
-if [ -n "$BASH_VERSION" ]; then
-	script_path=${BASH_SOURCE[0]}
-elif [ -n "$ZSH_VERSION" ]; then
-	script_path=${(%):-%x}
-fi
-current_dir=${script_path%/*}
-theme_option="@colors-base16"
-default_theme=${BASE16_THEME_DEFAULT:-"default-dark"}
-
-get_tmux_option() {
-	local option="$1"
-	local default_value="$2"
-	local option_value="$(tmux show-option -gqv "$option")"
-	if [ -z "$option_value" ]; then
-		echo "$default_value"
-	else
-		echo "$option_value"
-	fi
-}
-
 main() {
-	local theme="$(get_tmux_option "$theme_option" "$default_theme")"
-	tmux source-file "$current_dir/colors/base16-${theme}.conf"
-}
-main
+  CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  theme="$(tmux show-option -gqv "@tinted-color")"
 
-unset current_dir
-unset script_path
-unset theme_option
-unset default_theme
+  # Use legacy `@colors-base16` variable if it exists
+  if [ -z $theme ]; then
+    theme="base16-$(tmux show-option -gqv "@colors-base16")"
+  fi
+
+  if [ -z "$theme" ]; then
+    theme="base16-default-dark"
+  fi
+
+  case "$theme" in
+    base16-*)
+      theme_name="${theme#base16-}"
+      ;;
+    base24-*)
+      theme_name="${theme#base24-}"
+      ;;
+    *)
+      theme_name="$theme"
+      ;;
+  esac
+  theme_system="${theme%%-*}"
+  theme_system="$(printf '%s' "$theme_system" | sed 's/^[ \t]*//;s/[ \t]*$//')"
+
+  if [ "$theme_system" = "base16" ] || [ "$theme_system" = "base24" ]; then
+    tmux source-file "$CURRENT_DIR/colors/$theme_system-$theme_name.conf"
+  else
+    tmux display-message -t 0 "tinted-tmux: Unknown theme system: $theme_system (Supported values: base16, base24)"
+  fi
+
+  unset theme_option default_theme theme theme_name theme_system
+}
+
+main "$@"
