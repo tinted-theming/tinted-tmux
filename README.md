@@ -1,5 +1,7 @@
 # Tinted Tmux
 
+[![Matrix Chat](https://img.shields.io/matrix/tinted-theming:matrix.org)](https://matrix.to/#/#tinted-theming:matrix.org)
+
 Tinted Tmux provides all the [Base16] and [Base24] theme variants for tmux.
 Easily swap between over 250 themes.
 
