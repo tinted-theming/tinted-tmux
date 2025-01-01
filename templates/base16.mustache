@@ -55,8 +55,8 @@ if-shell '[ "$TINTED_TMUX_OPTION_STATUSBAR" = "1" ] || [ "$BASE16_TMUX_OPTION_ST
   set-option -g status-right "#[fg=#{{base02-hex}},bg=#{{base01-hex}} nobold, nounderscore, noitalics]#[fg=#{{base04-hex}},bg=#{{base02-hex}}] %Y-%m-%d  %H:%M #[fg=#{{base05-hex}},bg=#{{base02-hex}},nobold,noitalics,nounderscore]#[fg=#{{base01-hex}},bg=#{{base05-hex}}] #h "
   set-option -g status-right-length "80"
   set-option -g status-right-style none
-  set-window-option -g window-status-current-format "#[fg=#{{base01-hex}},bg=#{{base0A-hex}},nobold,noitalics,nounderscore]#[fg=#{{base02-hex}},bg=#{{base0A-hex}}] #I #[fg=#{{base02-hex}},bg=#{{base0A-hex}},bold] #W #[fg=#{{base0A-hex}},bg=#{{base01-hex}},nobold,noitalics,nounderscore]"
-  set-window-option -g window-status-format "#[fg=#{{base01-hex}},bg=#{{base02-hex}},noitalics]#[fg=#{{base06-hex}},bg=#{{base02-hex}}] #I #[fg=#{{base06-hex}},bg=#{{base02-hex}}] #W #[fg=#{{base02-hex}},bg=#{{base01-hex}},noitalics]"
+  set-window-option -g window-status-current-format "#[fg=#{{base01-hex}},bg=#{{base0A-hex}},nobold,noitalics,nounderscore]#[fg=#{{base02-hex}},bg=#{{base0A-hex}}] #I #[fg=#{{base02-hex}},bg=#{{base0A-hex}},bold] #W#{?window_zoomed_flag,*Z,} #[fg=#{{base0A-hex}},bg=#{{base01-hex}},nobold,noitalics,nounderscore]"
+  set-window-option -g window-status-format "#[fg=#{{base01-hex}},bg=#{{base02-hex}},noitalics]#[fg=#{{base06-hex}},bg=#{{base02-hex}}] #I #[fg=#{{base06-hex}},bg=#{{base02-hex}}] #W#{?window_zoomed_flag,*Z,} #[fg=#{{base02-hex}},bg=#{{base01-hex}},noitalics]"
   set-window-option -g window-status-separator ""
 }
 
