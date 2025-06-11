@@ -48,7 +48,7 @@ if-shell '[ "$TINTED_TMUX_OPTION_ACTIVE" = "1" ] || [ "$BASE16_TMUX_OPTION_ACTIV
 # BASE16_TMUX_OPTION_STATUSBAR is a legacy variable
 if-shell '[ "$TINTED_TMUX_OPTION_STATUSBAR" = "1" ] || [ "$BASE16_TMUX_OPTION_STATUSBAR" = "1" ]' {
   set-option -g status "on"
-  set-option -g status-justify "left" 
+  set-option -g status-justify "left"
   set-option -g status-left "#[fg=#{{base05-hex}},bg=#{{base03-hex}}] #S #[fg=#{{base03-hex}},bg=#{{base01-hex}},nobold,noitalics,nounderscore]"
   set-option -g status-left-length "80"
   set-option -g status-left-style none
